@@ -58,7 +58,7 @@ install_version() {
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
 
     mkdir -p "$install_path"/bin
-    cp "$ASDF_DOWNLOAD_PATH"/"$tool_cmd" "$install_path"/bin
+    cp "$ASDF_DOWNLOAD_PATH"/"${TOOL_NAME}_${version}_$(get_platform)_$(get_arch)"/"$tool_cmd" "$install_path"/bin
 
     test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
